@@ -1,6 +1,10 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
+application {
+    application { mainClass.set("io.hexlet.App") }
+}
+
 plugins {
     application
     jacoco
@@ -19,6 +23,8 @@ dependencies {
     implementation("org.apache.commons:commons-collections4:4.4")
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation ("info.picocli:picocli:4.7.7")
+    annotationProcessor ("info.picocli:picocli-codegen:4.7.7")
 }
 
 tasks.test {
