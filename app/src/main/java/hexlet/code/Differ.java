@@ -3,25 +3,34 @@ package hexlet.code;
 
 import picocli.CommandLine;
 
-import java.io.File;
-import java.util.concurrent.Callable;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-@CommandLine.Command(name = "gendiff", mixinStandardHelpOptions = true, version = "checksum 4.0",
-        description = "Compares two configuration files and shows a difference.")
 
 public class Differ implements Runnable{
 
-    @CommandLine.Parameters(index = "0", paramLabel="filepath1", description = "path to first file")
-    private File filepath1;
-    @CommandLine.Parameters(index = "1", paramLabel="filepath2", description = "path to second file")
-    private File filepath2;
 
-    @CommandLine.Option(names = {"-f", "--format"}, paramLabel="format", description = "output format [default: stylish]")
-    private String format1;
 
-    public static void generate(){
 
+    public static String generate(String filepath1, String filepath2) throws Exception {
+        String readFilePath1 = "./src/test/resources/" + filepath1;
+        String readFilePath2 = "./src/test/resources/" + filepath2;
+        String str = Differ.getData(readFilePath1);
+        return str;
     }
+
+
+    // метод parse может выбросить исключение, пробросим его выше
+    public static String getData(String filepath) throws Exception {
+        Path path = Paths.get(filepath);
+        if (!Files.exists(path)) {
+            throw new Exception("File '" + path + "' does not exist");
+        }
+        String content = Files.readString(path);
+        return content;
+    }
+
 
     @Override
     public void run() {
