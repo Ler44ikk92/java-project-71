@@ -6,6 +6,7 @@ import picocli.CommandLine;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
 
 public class Differ implements Runnable{
@@ -13,11 +14,16 @@ public class Differ implements Runnable{
 
 
 
-    public static String generate(String filepath1, String filepath2) throws Exception {
-        String readFilePath1 = "./src/test/resources/" + filepath1;
-        String readFilePath2 = "./src/test/resources/" + filepath2;
-        String str = Differ.getData(readFilePath1);
-        return str;
+    public static Map<String, Object> generate(String filepath1, String filepath2) throws Exception {
+        String content1 = Differ.getData(filepath1);
+        String content2 =  Differ.getData(filepath2);
+
+        Map<String, Object> map1= Parser.parser(content1);
+        Map<String, Object> map2= Parser.parser(content2);
+
+
+
+        return Compare.compare(map1, map2);
     }
 
 
