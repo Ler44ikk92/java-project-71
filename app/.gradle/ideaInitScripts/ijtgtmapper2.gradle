@@ -1,0 +1,7 @@
+ext.pathMapper = [:]
+ext.pathMapper.put('C:/Program Files/JetBrains/IntelliJIdea2024.2/plugins/gradle/lib/gradle-tooling-extension-impl.jar', '/mnt/c/Program Files/JetBrains/IntelliJIdea2024.2/plugins/gradle/lib/gradle-tooling-extension-impl.jar')
+ext.pathMapper.put('C:/Program Files/JetBrains/IntelliJIdea2024.2/plugins/gradle/lib/gradle-tooling-extension-api.jar', '/mnt/c/Program Files/JetBrains/IntelliJIdea2024.2/plugins/gradle/lib/gradle-tooling-extension-api.jar')
+ext.pathMapper.put('//wsl\\\$/Ubuntu/usr/lib/jvm/jdk-21.0.6/bin/java', '//wsl\\\$/Ubuntu/usr/lib/jvm/jdk-21.0.6/bin/java')
+ext.pathMapper.put('//wsl\\\$/Ubuntu/home/lera/projects/java-project-71', '//wsl\\\$/Ubuntu/home/lera/projects/java-project-71')
+ext.pathMapper.put("<<target java executable path>>", '/usr/lib/jvm/jdk-21.0.6/bin/java')
+ext.mapPath = { path -> pathMapper.get(path) ?: path }
