@@ -36,5 +36,5 @@ jobs:
           build-root-directory: app
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./app/gradlew build sonar --info
+        run: ./gradlew build sonar --info
 
