@@ -15,17 +15,17 @@ import java.util.concurrent.Callable;
 
 public class CheckSum implements Callable<Integer> {
 
-        @CommandLine.Parameters(index = "0", description = "The file whose checksum to calculate.")
-        private File file;
+    @CommandLine.Parameters(index = "0", description = "The file whose checksum to calculate.")
+    private File file;
 
-        @CommandLine.Option(names = {"-a", "--algorithm"}, description = "MD5, SHA-1, SHA-256, ...")
-        private String algorithm = "SHA-256";
+    @CommandLine.Option(names = {"-a", "--algorithm"}, description = "MD5, SHA-1, SHA-256, ...")
+    private String algorithm = "SHA-256";
 
-        @Override
-        public Integer call() throws Exception { // your business logic goes here...
-            byte[] fileContents = Files.readAllBytes(file.toPath());
-            byte[] digest = MessageDigest.getInstance(algorithm).digest(fileContents);
-            System.out.printf("%0" + (digest.length * 2) + "x%n", new BigInteger(1, digest));
-            return 0;
-        }
+    @Override
+    public Integer call() throws Exception { // your business logic goes here...
+        byte[] fileContents = Files.readAllBytes(file.toPath());
+        byte[] digest = MessageDigest.getInstance(algorithm).digest(fileContents);
+        System.out.printf("%0" + (digest.length * 2) + "x%n", new BigInteger(1, digest));
+        return 0;
+    }
 }

@@ -1,7 +1,7 @@
 package hexlet.code;
 
 
-import picocli.CommandLine;
+
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 
-public class Differ implements Runnable{
+public class Differ implements Runnable {
 
 
 
@@ -18,8 +18,8 @@ public class Differ implements Runnable{
         String content1 = Differ.getData(filepath1);
         String content2 =  Differ.getData(filepath2);
 
-        Map<String, Object> map1= Parser.parser(content1);
-        Map<String, Object> map2= Parser.parser(content2);
+        Map<String, Object> map1 = Parser.parser(content1);
+        Map<String, Object> map2 = Parser.parser(content2);
 
 
 

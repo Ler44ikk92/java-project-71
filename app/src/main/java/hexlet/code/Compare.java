@@ -1,13 +1,17 @@
 package hexlet.code;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 
 public class Compare {
 
-    public static Map<String, Object> compare(Map<String, Object> content1, Map<String, Object> content2 ) throws JsonProcessingException {
+    public static Map<String, Object> compare(Map<String, Object> content1, Map<String, Object> content2)
+            throws JsonProcessingException {
         // Используем TreeMap для автоматической сортировки по ключам
         Map<String, Object> resultMap = new LinkedHashMap<>();
 
