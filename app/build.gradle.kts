@@ -12,14 +12,6 @@ plugins {
     id("org.sonarqube") version "6.3.1.5724"
 }
 
-//sonar {
-//    properties {
-//        property("sonar.projectKey", "")
-//        property("sonar.organization", "")
-//    }
-//}
-
-
 
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
