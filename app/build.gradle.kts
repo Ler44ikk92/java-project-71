@@ -9,8 +9,17 @@ plugins {
     application
     id("checkstyle")
     id("com.github.ben-manes.versions") version "0.50.0"
-    id("org.sonarqube") version "6.0.1.5171"
+    id("org.sonarqube") version "6.3.1.5724"
 }
+
+//sonar {
+//    properties {
+//        property("sonar.projectKey", "")
+//        property("sonar.organization", "")
+//    }
+//}
+
+
 
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
@@ -28,6 +37,8 @@ dependencies {
     annotationProcessor ("info.picocli:picocli-codegen:4.7.7")
     implementation ("com.fasterxml.jackson.core:jackson-databind:2.13.2")
 }
+
+
 
 tasks.test {
     useJUnitPlatform()
