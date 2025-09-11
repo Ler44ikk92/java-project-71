@@ -13,6 +13,12 @@ plugins {
     id("org.sonarqube") version "6.3.1.5724"
 }
 
+sonar {
+    properties {
+        property("sonar.projectKey", "Ler44ikk92_java-project-71")
+        property("sonar.organization", "ler44ikk92")
+    }
+}
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
