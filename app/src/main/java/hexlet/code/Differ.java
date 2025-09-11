@@ -12,9 +12,7 @@ import java.util.Map;
 public class Differ implements Runnable {
 
 
-
-
-    public static Map<String, Object> generate(String filepath1, String filepath2) throws Exception {
+    public static String generate(String filepath1, String filepath2) throws Exception {
         String content1 = Differ.getData(filepath1);
         String content2 =  Differ.getData(filepath2);
 
@@ -23,7 +21,7 @@ public class Differ implements Runnable {
 
 
 
-        return Compare.compare(map1, map2);
+        return Compare.compare(map1, map2).toString();
     }
 
 
