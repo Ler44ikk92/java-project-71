@@ -21,6 +21,12 @@ public class CheckSum implements Callable<Integer> {
     @CommandLine.Option(names = {"-a", "--algorithm"}, description = "MD5, SHA-1, SHA-256, ...")
     private String algorithm = "SHA-256";
 
+    /**
+     * Этот метод предназначен для переопределения в подклассах.
+     *
+     * @return результат вызова
+     *
+     * */
     @Override
     public Integer call() throws Exception { // your business logic goes here...
         byte[] fileContents = Files.readAllBytes(file.toPath());

@@ -17,6 +17,12 @@ public class App implements Callable<Integer> {
             description = "output format [default: stylish]")
     private String format1;
 
+    /**
+     * Этот метод предназначен для переопределения в подклассах.
+     *
+     * @return результат вызова
+     *
+     * */
     @Override
     public Integer call() throws Exception {
 //        String content = (Differ.getData(String.valueOf(filepath1)));

@@ -1,3 +1,4 @@
+import KotlinX.Serialization.properties
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
@@ -11,7 +12,6 @@ plugins {
     id("com.github.ben-manes.versions") version "0.50.0"
     id("org.sonarqube") version "6.3.1.5724"
 }
-
 
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
