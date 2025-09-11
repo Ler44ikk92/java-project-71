@@ -19,6 +19,7 @@ sonar {
         property("sonar.organization", "ler44ikk92")
     }
 }
+
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
