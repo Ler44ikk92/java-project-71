@@ -18,10 +18,7 @@ public class Differ implements Runnable {
 
         Map<String, Object> map1 = Parser.parser(content1);
         Map<String, Object> map2 = Parser.parser(content2);
-
-
-
-        return Compare.compare(map1, map2).toString();
+        return Parser.convertToJson(Compare.compare(map1, map2));
     }
 
 

@@ -41,7 +41,7 @@ public class Compare {
                 resultMap.put("+ " + key2, entry2.getValue()); // Добавленный ключ
             }
         }
-        return sortMap(resultMap); // Возвращаем отсортированную карту
+        return sortMap(resultMap); // Возвращаем отсортированный список
     }
 
     public static Map<String, Object> sortMap(Map<String, Object> map) {
@@ -50,8 +50,8 @@ public class Compare {
 
         // Сортировка списка с использованием компаратора
         entryList.sort((entry1, entry2) -> {
-            String key1 = entry1.getKey().trim().substring(2);
-            String key2 = entry2.getKey().trim().substring(2);
+            String key1 = entry1.getKey().substring(2);
+            String key2 = entry2.getKey().substring(2);
             return key1.compareTo(key2);
         });
 
