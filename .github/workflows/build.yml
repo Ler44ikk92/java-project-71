@@ -24,6 +24,8 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+      - name: Generate coverage report
+        run: make report
       - name: Cache Gradle packages
         uses: actions/cache@v4
         with:

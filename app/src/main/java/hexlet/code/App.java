@@ -25,12 +25,7 @@ public class App implements Callable<Integer> {
      * */
     @Override
     public Integer call() throws Exception {
-//        String content = (Differ.getData(String.valueOf(filepath1)));
-//        String content2 = (Differ.getData(String.valueOf(filepath2)));
-//        Map<String, Object> pars1 = Parser.parser(content);
-//        Map<String, Object> pars2 = Parser.parser(content2);
         System.out.println(Differ.generate(filepath1, filepath2));
-        //System.out.println(Parser.parser(content2));
         return 0;
     }
 
