@@ -21,6 +21,11 @@ sonar {
     }
 }
 
+jacoco {
+    toolVersion = "0.8.13"
+    reportsDirectory = layout.buildDirectory.dir("src/text/resources/jacoco")
+}
+
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
@@ -53,8 +58,7 @@ tasks.test {
 tasks.jacocoTestReport {
     dependsOn (tasks.test)
             reports {
-                xml.required = true
-            }
+                xml.required = true }
 }
 
 
