@@ -10,10 +10,6 @@ import java.util.Map;
 
 public class Compare {
 
-    public Compare() {
-        super();
-    }
-
     public static Map<String, Object> compare(Map<String, Object> content1, Map<String, Object> content2)
             throws JsonProcessingException {
         // Используем TreeMap для автоматической сортировки по ключам
