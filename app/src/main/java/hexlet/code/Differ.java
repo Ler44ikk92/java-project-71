@@ -13,14 +13,18 @@ public class Differ implements Runnable {
 
 
     public static String generate(String filepath1, String filepath2) throws Exception {
+        return generate(filepath1, filepath2, "stylish");
+    }
+
+    public static String generate(String filepath1, String filepath2, String stylish) throws Exception {
         String content1 = Differ.getData(filepath1);
         String content2 =  Differ.getData(filepath2);
 
         Map<String, Object> map1 = Parser.parser(content1);
         Map<String, Object> map2 = Parser.parser(content2);
+
         return Parser.convertToJson(Compare.compare(map1, map2));
     }
-
 
     // метод parse может выбросить исключение, пробросим его выше
     public static String getData(String filepath) throws Exception {
