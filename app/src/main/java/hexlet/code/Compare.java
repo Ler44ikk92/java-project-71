@@ -46,10 +46,11 @@ public class Compare {
         for (Map.Entry<String, Object> entry2 : content2.entrySet()) {
             String key2 = entry2.getKey();
             if (!content1.containsKey(key2)) {
-                if (entry2.getValue() == null) {
+                Object value2 = entry2.getValue();
+                if (value2 == null) {
                     resultMap.put("+ " + key2, null);
                 } else {
-                    resultMap.put("+ " + key2, entry2.getValue().toString()); // Добавленный ключ
+                    resultMap.put("+ " + key2, value2.toString()); // Добавленный ключ
                 }
             }
         }

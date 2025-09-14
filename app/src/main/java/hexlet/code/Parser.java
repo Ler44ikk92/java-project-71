@@ -22,7 +22,6 @@ public class Parser {
     public static String convertToJson(Map<String, Object> content) throws JsonProcessingException {
         // Создание экземпляра ObjectMapper
         ObjectMapper objectMapper = new ObjectMapper();
-
         // Преобразование карты в JSON
         JsonNode json = objectMapper.valueToTree(content);
         String str = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
